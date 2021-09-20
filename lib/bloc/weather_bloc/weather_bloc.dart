@@ -25,36 +25,3 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   }
 }
 
-
-// class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-//   @override
-//   WeatherBloc(InitialWeatherState initialWeatherState)
-//       : super(InitialWeatherState());
-
-//   @override
-//   Stream<WeatherState> mapEventToState(
-//     WeatherEvent event,
-//   ) async* {
-//     if (event is InitialWeatherEvent) {
-//       yield LoadingWeatherState();
-//       try {
-//         Weather? cWeather = await FetchWeather.getWeather(place: "auto:ip");
-//         yield LoadedWeatherState(cWeather);
-//         print("initial done");
-//       } catch (e) {
-//         yield WeatherNotLoadedState();
-//       }
-//     }
-
-//     if (event is WeatherSearchEvent) {
-//       yield LoadingWeatherState();
-//       try {
-//         Weather? cWeather = await FetchWeather.getWeather(place: event.city);
-//         yield LoadedWeatherState(cWeather);
-//         print("done");
-//       } catch (e) {
-//         yield WeatherNotLoadedState();
-//       }
-//     }
-//   }
-// }
